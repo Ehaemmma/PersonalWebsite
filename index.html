@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Anna Zhou</title>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="lines.css">
+</head>
+<body>
+        <h1 class="at_right Page1">Anna Zhou <br> 周 昱辰</h1>
+        <p class="animate__animated animate__fadeIn at_right Page1" id="intro"></p>
+        <p class="at_right Page1"> Here are my <b>lenses</b>. </p>
+        <svg class="lines Page1">
+            <line id="line1" x1="0" y1="44.68%" x2="100%" y2="84.3%" style="stroke:rgb(0,0,0);stroke-width:1" />
+            <line id="line2" x1="0" y1="96.23%" x2="100%" y2="69.83%" style="stroke:rgb(0,0,0);stroke-width:1" />
+            <line id="line2_1" x1="42%" y1="85.14%" x2="54%" y2="81.97%" style="stroke:rgb(0,0,0);stroke-width:6" />
+        </svg>
+        <svg class="Page1">
+            <line id="blueLine" x1="19.74%" y1="0" x2="38.55%" y2="100%" style="stroke:#0089A6;stroke-width:4" />
+        </svg>
+        <button class="MainPageButton Page1" style="left:33.34%; top:52.5%"> Blog </button>
+        <button class="MainPageButton Page1" style="left:47.5%; top:58.11%"> Portfolio </button>
+        <button class="MainPageButton Page1" style="left:62.9%; top:64.21%"> Contact </button>
+        <svg class="Page2">
+            <line id="blueLine2" x1="38.55%" y1="0%" x2="57.36%" y2="100%" style="stroke:#0089A6;stroke-width:4" />
+        </svg>
+
+
+</body>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="text.js"></script>
+<script>
+    function lineCalculator (x1, y1, x2, y2, x) {
+        const k = (y2-y1)/(x2-x1);
+        const b = y1 - k*x1;
+        return k*x+b;
+    }
+    $(document).ready(function() {
+        $('button.MainPageButton').mouseover(function(){
+            this.style.color = "#0089A6";
+            this.style.fontWeight = "bold";
+        });
+        $('button.MainPageButton').mouseout(function(){
+            this.style.color = "#000000";
+            this.style.fontWeight = "normal";
+        });
+        $("#whoIam").mousedown(function(){
+            open("https://drive.google.com/file/d/1uunavh3XPXhGhCIxZoYglOMkDA1HhkE_/view?usp=sharing","blank");
+        })
+    });
+    $(window).scroll(function () {
+        let scrollTop = $(window).scrollTop();
+        let height = $(window).height();
+    $('.logo_container, .slogan').css({
+        'opacity': ((height - scrollTop) / height)
+    });
+});
+
+</script>
+</html>
