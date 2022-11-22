@@ -22,15 +22,19 @@
         padding: 0;
         margin: 0;
     }
-    .animate__animated.animate__fadeIn{
-        --animate-duration: 3s;
-    }
     button {
         background-color: transparent;
         border: none;
         position: absolute;
     }
     .MainPageButton {
+        font-size: 2.2vmax;
+    }
+    .SectionButton {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        font-weight: normal;
+        top: 112vh;
         font-size: 2.2vmax;
     }
     p {
@@ -41,7 +45,7 @@
         text-align: right;
         margin-right: 15.3%;
     }
-    .Page1 {
+    .Page1_fixed {
         top: 0;
         left: 0;
     }
