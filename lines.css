@@ -31,11 +31,15 @@
         font-size: 2.2vmax;
     }
     .SectionButton {
+        font-weight: normal;
+        font-size: 2.2vmax;
+    }
+    .SectionButtonSpan {
         writing-mode: vertical-rl;
         text-orientation: mixed;
-        font-weight: normal;
-        top: 112vh;
-        font-size: 2.2vmax;
+    }
+    .FirstLetterSectionButtonSpan {
+        font-size: 3.5vmax;
     }
     p {
         font-size: 1.5vmax;
@@ -49,8 +53,15 @@
         top: 0;
         left: 0;
     }
-    .Page2 {
+    .Page2_fixed {
         top: 99.9vh;
+        left: 0;
+    }
+    .Page2_in {
+        top: 75vh;
+    }
+    .Page3 {
+        top: 199.9vh;
         left: 0;
     }
     mark {
