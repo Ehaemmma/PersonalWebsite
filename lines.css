@@ -1,0 +1,51 @@
+    * {
+        font-family: Caviar Dreams, 宋体, sans-serif;
+    }
+    body {
+      background: #FFFFFF;
+      color: black;
+    }
+    h1 {
+        font-size: 6.5vh;
+        font-weight: normal;
+        line-height: 120%;
+    }
+    svg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        padding: 0;
+        margin: 0;
+    }
+    .animate__animated.animate__fadeIn{
+        --animate-duration: 3s;
+    }
+    button {
+        background-color: transparent;
+        border: none;
+        position: absolute;
+    }
+    .MainPageButton {
+        font-size: 2.2vmax;
+    }
+    p {
+        font-size: 1.5vmax;
+        line-height: 130%;
+    }
+    .at_right {
+        text-align: right;
+        margin-right: 15.3%;
+    }
+    .Page1 {
+        top: 0;
+        left: 0;
+    }
+    .Page2 {
+        top: 99.9vh;
+        left: 0;
+    }
+    mark {
+        background-color: #0089A6;
+        color: white;
+    }
