@@ -1,5 +1,9 @@
     * {
-        font-family: Caviar Dreams, 宋体, sans-serif;
+        font-family: Caviar, 宋体, sans-serif;
+    }
+    @font-face {
+        font-family: Caviar;
+        src: url(assets/CaviarDreams.ttf);
     }
     body {
       background: #FFFFFF;
