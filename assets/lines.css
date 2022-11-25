@@ -1,0 +1,70 @@
+    * {
+        font-family: Caviar, 宋体, sans-serif;
+    }
+    @font-face {
+        font-family: Caviar, 宋体;
+        src: url(CaviarDreams.ttf);
+    }
+    body {
+      background: #FFFFFF;
+      color: black;
+    }
+    h1 {
+        font-size: 6.5vh;
+        font-weight: normal;
+        line-height: 120%;
+    }
+    svg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        padding: 0;
+        margin: 0;
+    }
+    button {
+        background-color: transparent;
+        border: none;
+        position: absolute;
+    }
+    .MainPageButton {
+        font-size: 2.2vmax;
+    }
+    .SectionButton {
+        font-weight: normal;
+        font-size: 2.2vmax;
+    }
+    .SectionButtonSpan {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+    }
+    .FirstLetterSectionButtonSpan {
+        font-size: 3.5vmax;
+    }
+    p {
+        font-size: 1.5vmax;
+        line-height: 130%;
+    }
+    .at_right {
+        text-align: right;
+        margin-right: 15.3%;
+    }
+    .Page1_fixed {
+        top: 0;
+        left: 0;
+    }
+    .Page2_fixed {
+        top: 99.9vh;
+        left: 0;
+    }
+    .Page2_in {
+        top: 75vh;
+    }
+    .Page3 {
+        top: 199.9vh;
+        left: 0;
+    }
+    mark {
+        background-color: #0089A6;
+        color: white;
+    }

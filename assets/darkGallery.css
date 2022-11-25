@@ -1,0 +1,51 @@
+body {
+    font-family: Caviar, 宋体, sans-serif;
+}
+@font-face {
+    font-family: Caviar;
+    src: url(CaviarDreams.ttf);
+}
+body {
+    background: #1C1C1C;
+    color: white;
+}
+h1,h2 {
+
+    font-weight: normal;
+}
+h1 {
+    margin-left: 6vw;
+    padding-top: 3vh;
+    font-size: 6.5vh;
+}
+h2 {
+    padding: 0;
+    margin-left: 6.2vw;
+    font-family: RomanS, sans-serif;
+    font-size: 3vh;
+}
+.gallery {
+    position: absolute;
+    bottom: 3vmin;
+    right: 3vmin;
+    width: 50%;
+    alignment: center;
+}
+svg {
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index: -1;
+    padding: 0;
+    margin: 0;
+}
+p {
+    position: absolute;
+    font-size: 2.4vmin;
+    top: 50%;
+    left: 30%;
+    margin-right: 50%;
+}
+
