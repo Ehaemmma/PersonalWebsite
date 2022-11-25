@@ -2,8 +2,14 @@
         font-family: Caviar, 宋体, sans-serif;
     }
     @font-face {
-        font-family: Caviar, 宋体;
+        font-family: Caviar;
         src: url(CaviarDreams.ttf);
+        unicode-range: U+0025-00FF;
+    }
+    @font-face {
+        font-family: 宋体;
+        src: url(song.ttf);
+        unicode-range: U+4E00-9FFF;
     }
     body {
       background: #FFFFFF;
@@ -58,7 +64,7 @@
         left: 0;
     }
     .Page2_in {
-        top: 75vh;
+        top: 80vh;
     }
     .Page3 {
         top: 199.9vh;
@@ -67,4 +73,13 @@
     mark {
         background-color: #0089A6;
         color: white;
+    }
+    #intro {
+        opacity: 0;
+    }
+    .backgroundImage{
+        position: absolute;
+        right: 15.8vw;
+        top: 10vmax;
+        z-index: -1;
     }

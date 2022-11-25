@@ -13,8 +13,9 @@
 <body>
     <div id="Page1">
         <h1 class="at_right Page1_fixed Page1_out">Anna Zhou <br> 周 昱辰</h1>
-        <p class="at_right Page1_out" id="intro"></p>
-        <p class="at_right Page1_fixed Page1_out"> Here are my <b>lenses</b>. </p>
+        <img id="lake" class="backgroundImage Page1_out" src="assets/westlake/DSC00597.jpg" alt="" width="35%">
+        <p class="at_right" id="intro"></p>
+        <p class="at_right Page1_fixed Page1_out"> Here are my <b id="lenses">lenses</b>. </p>
         <svg class="lines Page1_fixed Page1_out">
             <line id="line1" x1="0" y1="44.68%" x2="100%" y2="84.3%" style="stroke:rgb(0,0,0);stroke-width:1" />
             <line id="line2" x1="0" y1="96.23%" x2="100%" y2="69.83%" style="stroke:rgb(0,0,0);stroke-width:1" />
@@ -28,12 +29,12 @@
         <button class="MainPageButton Page1_fixed Page1_out" style="left:62.9%; top:64.21%"> Contact </button>
     </div>
     <div id="Page2">
-        <button class="SectionButton Page2_in" id="SB1"><span class="SectionButtonSpan"><span class="FirstLetterSectionButtonSpan">P</span>tography</span></button>
+        <button class="SectionButton Page2_in" id="SB1"><span class="SectionButtonSpan"><span class="FirstLetterSectionButtonSpan">P</span>otography</span></button>
         <button class="SectionButton Page2_in" id="SB2"><span class="SectionButtonSpan"><span class="FirstLetterSectionButtonSpan">T</span>heater</span></button>
         <button class="SectionButton Page2_in" id="SB3"><span class="SectionButtonSpan"><span class="FirstLetterSectionButtonSpan">E</span>ngineering</span></button>
         <button class="SectionButton Page2_in" id="SB4"><span class="SectionButtonSpan"><span class="FirstLetterSectionButtonSpan">L</span>ighting</span></button>
         <button class="SectionButton Page2_in" id="SB5"><span class="SectionButtonSpan"><span class="FirstLetterSectionButtonSpan">G</span>ames</span></button>
-        <button class="SectionButton Page2_in" id="SB6"><span class="SectionButtonSpan"><span class="FirstLetterSectionButtonSpan">A</span>ctivities</span></button>
+        <button class="SectionButton Page2_in" id="SB6"><span class="SectionButtonSpan"><span class="FirstLetterSectionButtonSpan">D</span>esigns</span></button>
 
         <svg class="Page2_fixed">
             <line id="blueLine2" x1="38.55%" y1="0%" x2="57.36%" y2="100%" style="stroke:#0089A6;stroke-width:4" />
@@ -62,12 +63,14 @@
         for (let i=1; i<7; i++) {
             const buttonName = '#SB' + i.toString();
             $(buttonName).css({
-                'left': (i*15-4).toString() + "%",
+                'left': (i*15-6).toString() + "%",
                 'opacity': 0
             });
         }
     }
-    $(document).ready(renderPage2());
+    $(document).ready(function(){
+        renderPage2();
+    });
     $('button').mouseover(function(){
             this.style.color = "#0089A6";
             this.style.fontWeight = "bold";
@@ -76,6 +79,20 @@
             this.style.color = "#000000";
             this.style.fontWeight = "normal";
     });
+    $('#lenses').mouseover(function(){
+            this.style.color = "#0089A6";
+    });
+    $('#lenses').mouseout(function(){
+            this.style.color = "#000000";
+    });
+    $("#lenses").mousedown(function(){
+        let intro = $("#intro");
+        let lake = $("#lake");
+        lake.animate({'opacity': 0});
+        intro.animate({'opacity': 100},3000);
+        lake.removeClass("Page1_out");
+        intro.addClass("Page1_out");
+    })
     $("#whoIam").mousedown(function(){
             open("https://drive.google.com/file/d/1uunavh3XPXhGhCIxZoYglOMkDA1HhkE_/view?usp=sharing","blank");
     });
@@ -85,7 +102,6 @@
         let opacity1 = (scrollTop * 0.002 - 1 < 0)? ((scrollTop * 0.002 - 1)*(scrollTop * 0.002 - 1)):0;
         let opacity2 = scrollTop * 0.003 - 0.5;
         $('.Page1_out').css({
-            // 'opacity': ((height - 3*scrollTop) / height),
             'opacity': opacity1,
         });
         $('.Page2_in').css({
