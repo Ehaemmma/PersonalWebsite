@@ -35,18 +35,19 @@
         <button class="SectionButton Page2_in" id="SB4"><span class="SectionButtonSpan"><span class="FirstLetterSectionButtonSpan">L</span>ighting</span></button>
         <button class="SectionButton Page2_in" id="SB5"><span class="SectionButtonSpan"><span class="FirstLetterSectionButtonSpan">G</span>ames</span></button>
         <button class="SectionButton Page2_in" id="SB6"><span class="SectionButtonSpan"><span class="FirstLetterSectionButtonSpan">D</span>esigns</span></button>
-
+		<svg class="Page2_linein sectionLines" style="opacity:0">
+            <line x1="12%" y1="0%" x2="62%" y2="100%" style="stroke:#A1A1A1;stroke-width:1" />
+            <line x1="25%" y1="0%" x2="0%" y2="100%" style="stroke:#A1A1A1;stroke-width:1" />
+            <line x1="23%" y1="0%" x2="28%" y2="100%" style="stroke:#A1A1A1;stroke-width:1" />
+            <line x1="50%" y1="0%" x2="28%" y2="100%" style="stroke:#A1A1A1;stroke-width:2" />
+            <line x1="58%" y1="0%" x2="90%" y2="100%" style="stroke:#A1A1A1;stroke-width:2" />
+            <line x1="69%" y1="0%" x2="69%" y2="100%" style="stroke:#A1A1A1;stroke-width:1" />
+            <line x1="85%" y1="0%" x2="76%" y2="100%" style="stroke:#A1A1A1;stroke-width:1" />
+		</svg>
         <svg class="Page2_fixed">
-            <line id="blueLine2" x1="38.55%" y1="0%" x2="57.36%" y2="100%" style="stroke:#0089A6;stroke-width:4" />
+            <line id="blueLine2" x1="38.55%" y1="0%" x2="34%" y2="100%" style="stroke:#0089A6;stroke-width:4" />
         </svg>
     </div>
-    <div id="Page3">
-        <svg class="Page3">
-            <line id="blueLine3" x1="57.36%" y1="0%" x2="38.55%" y2="100%" style="stroke:#0089A6;stroke-width:4" />
-        </svg>
-
-    </div>
-
 
 </body>
 
@@ -54,11 +55,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="text.js"></script>
 <script>
-    function lineCalculator (x1, y1, x2, y2, x) {
-        const k = (y2-y1)/(x2-x1);
-        const b = y1 - k*x1;
-        return k*x+b;
-    }
     function renderPage2() {
         for (let i=1; i<7; i++) {
             const buttonName = '#SB' + i.toString();
@@ -101,12 +97,15 @@
         let height = $(window).height();
         let opacity1 = (scrollTop * 0.002 - 1 < 0)? ((scrollTop * 0.002 - 1)*(scrollTop * 0.002 - 1)):0;
         let opacity2 = scrollTop * 0.003 - 0.5;
+        let opacity3 = scrollTop * 0.006 - 2.5;
         $('.Page1_out').css({
             'opacity': opacity1,
         });
         $('.Page2_in').css({
-            // 'opacity': ((height - 3*scrollTop) / height),
             'opacity': opacity2,
+        });
+        $('.Page2_linein').css({
+            'opacity': opacity3,
         });
     });
 

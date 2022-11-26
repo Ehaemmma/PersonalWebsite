@@ -39,6 +39,7 @@
     .SectionButton {
         font-weight: normal;
         font-size: 2.2vmax;
+        top: 80vh;
     }
     .SectionButtonSpan {
         writing-mode: vertical-rl;
@@ -62,13 +63,7 @@
     .Page2_fixed {
         top: 99.9vh;
         left: 0;
-    }
-    .Page2_in {
-        top: 80vh;
-    }
-    .Page3 {
-        top: 199.9vh;
-        left: 0;
+        height: 75%;
     }
     mark {
         background-color: #0089A6;
@@ -80,6 +75,10 @@
     .backgroundImage{
         position: absolute;
         right: 15.8vw;
-        top: 10vmax;
+        top: 22vmin;
         z-index: -1;
+    }
+    .sectionLines{
+        top: 75vh;
+        left: 0;
     }
