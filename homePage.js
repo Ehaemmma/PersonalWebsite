@@ -10,20 +10,6 @@ function renderPage2() {
 $(document).ready(function(){
     renderPage2();
 });
-$('.MainPageButton').mouseover(function(){
-    this.style.color = "#0089A6";
-    this.style.fontWeight = "bold";
-});
-$('.MainPageButton').mouseout(function(){
-    this.style.color = "#000000";
-    this.style.fontWeight = "normal";
-});
-$('#lenses').mouseover(function(){
-    this.style.color = "#0089A6";
-});
-$('#lenses').mouseout(function(){
-    this.style.color = "#000000";
-});
 $("#lenses").mousedown(function(){
     let intro = $("#intro");
     let lake = $("#lake");
@@ -84,4 +70,15 @@ $('.SectionButton').mouseleave(function(){
     $(this).css({
         'font-weight' : "normal",
     }, 3000);
+})
+$('.SectionButton').mousedown(function(){
+    if ($(window).scrollTop() >= 0.749* $(window).height()) {
+        const dark = $("#darkBackground");
+        $('.SectionButton').each(function() {
+            this.style.color = "gray";
+        })
+        $(this).animate({
+            'font-size': "3vmax"
+        });
+    }
 })

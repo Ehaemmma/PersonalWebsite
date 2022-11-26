@@ -25,7 +25,7 @@
         <line id="blueLine" x1="19.74%" y1="0" x2="38.55%" y2="100%" style="stroke:#0089A6;stroke-width:4" />
     </svg>
     <button class="MainPageButton Page1_fixed Page1_out" style="left:33.34%; top:52.5%"> Blog </button>
-    <button class="MainPageButton Page1_fixed Page1_out" style="left:47.5%; top:58.11%"> Portfolio </button>
+    <button class="MainPageButton Page1_fixed Page1_out" style="left:47.5%; top:58.11%" onclick="$('html, body').animate({scrollTop: $('#Portfolio').offset().top}, 1000);"> Portfolio </button>
     <button class="MainPageButton Page1_fixed Page1_out" style="left:62.9%; top:64.21%"> Contact </button>
 </div>
 <div id="Page2">
@@ -41,7 +41,7 @@
     <button class="SectionButton Page2_in" id="SB4"><span class="SectionButtonSpan"><span class="FirstLetterSectionButtonSpan">L</span>ighting</span></button>
     <button class="SectionButton Page2_in" id="SB5"><span class="SectionButtonSpan"><span class="FirstLetterSectionButtonSpan">G</span>ames</span></button>
     <button class="SectionButton Page2_in" id="SB6"><span class="SectionButtonSpan"><span class="FirstLetterSectionButtonSpan">D</span>esigns</span></button>
-    <svg class="Page2_linein sectionLines" style="opacity:0">
+    <svg id="Portfolio" class="Page2_linein sectionLines" style="opacity:0">
         <line x1="12%" y1="0%" x2="62%" y2="100%" style="stroke:#A1A1A1;stroke-width:1" />
         <line x1="25%" y1="0%" x2="0%" y2="100%" style="stroke:#A1A1A1;stroke-width:1" />
         <line x1="23%" y1="0%" x2="28%" y2="100%" style="stroke:#A1A1A1;stroke-width:1" />

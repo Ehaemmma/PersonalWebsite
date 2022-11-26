@@ -1,0 +1,130 @@
+body {
+    font-family: Caviar, 宋体, sans-serif;
+}
+@font-face {
+    font-family: Caviar;
+    src: url(CaviarDreams.ttf);
+}
+body {
+    background: black;
+    color: white;
+}
+#icon{
+    position: fixed;
+    top: 3vmin;
+    right: 3vmin;
+}
+#icon.hover {
+    background-color: white;
+    color: black;
+}
+#backHome {
+    text-align: center;
+    font-size: 2.5vmin;
+    padding-top: 0;
+}
+.screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.Page {
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin : 0;
+    padding: 0;
+    position: fixed;
+}
+.description{
+    margin-left: 50%;
+    margin-top: 12%;
+    margin-right: 25%;
+}
+.tag{
+    margin-top: 5%;
+}
+h1,h2 {
+    font-weight: normal;
+}
+h1 {
+    margin-left: 6vw;
+    padding-top: 3vh;
+    font-size: 6.5vh;
+}
+h2 {
+    padding: 0;
+    margin-left: 6.2vw;
+    font-family: RomanS, sans-serif;
+    font-size: 3vh;
+}
+h3 {
+    font-size: 3.5vmin;
+}
+.at_right {
+    text-align: right;
+    margin-right: 15.3%;
+}
+svg {
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index: 0;
+    padding: 0;
+    margin: 0;
+}
+#cover {
+    position: absolute;
+    top: 40vmin;
+    left: 20vmin;
+}
+button {
+    background-color: transparent;
+    border: none;
+}
+#clickToPlay:hover {
+    color : #0089A6;
+    font-weight : bold;
+}
+.c1{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+.c2{
+    position: absolute;
+    margin-left: 40%;
+    z-index: -1;
+}
+.Page1{
+    position: static;
+}
+.Page2{
+    opacity: 0;
+}
+.Page3{
+    background-color: #F2B0AD;
+    opacity: 0;
+}
+.Page4{
+    background-color: #C6B9A9;
+    opacity: 0;
+}
+.Page5{
+    background-color: #B1B1B1;
+    opacity: 0;
+}
+.Page6{
+    background-color: #8BB6A6;
+    opacity: 0;
+}
+.Page7{
+    background-color: #453F39;
+    opacity: 0;
+}
