@@ -13,22 +13,17 @@ body {
     position: fixed;
     top: 3vmin;
     right: 3vmin;
+
 }
 #icon.hover {
     background-color: white;
     color: black;
 }
 #backHome {
-    text-align: center;
+    text-align: right;
     font-size: 2.5vmin;
-    padding-top: 0;
-}
-.screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 .Page {
     height: 100vh;
@@ -74,7 +69,7 @@ svg {
     position: absolute;
     top: 0;
     left:0;
-    z-index: 0;
+    z-index: -1;
     padding: 0;
     margin: 0;
 }
@@ -87,23 +82,38 @@ button {
     background-color: transparent;
     border: none;
 }
+#clickToPlay {
+    color: #0089A6;
+    margin-left: 50%;
+    margin-top: 15%;
+}
 #clickToPlay:hover {
-    color : #0089A6;
+    text-decoration: underline;
     font-weight : bold;
 }
+
 .c1{
     position: absolute;
     bottom: 0;
     left: 0;
-    z-index: -1;
+    z-index: -2;
 }
 .c2{
     position: absolute;
     margin-left: 40%;
-    z-index: -1;
+    z-index: -2;
+}
+.screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
 }
 .Page1{
     position: static;
+    z-index: 10;
 }
 .Page2{
     opacity: 0;

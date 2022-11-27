@@ -47,4 +47,21 @@ p {
     left: 30%;
     margin-right: 50%;
 }
+#icon{
+    position: fixed;
+    top: 3vmin;
+    right: 3vmin;
+    align-items: center;
 
+}
+#icon.hover {
+    background-color: white;
+    color: black;
+}
+#backHome {
+    position: static;
+    text-align: right;
+    font-size: 2.5vmin;
+    padding: 0;
+    margin: 0;
+}

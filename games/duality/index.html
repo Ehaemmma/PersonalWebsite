@@ -4,17 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Duality</title>
-    <!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="../../assets/duality.css">
     <link rel="icon" href="../../assets/Logo.svg">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#icon").mousedown(function () {
+                window.location = "../../index.html";
+            });
+            $("#clickToPlay").mousedown(function () {
+                window.open("https://focs.ji.sjtu.edu.cn/silverfocs/demo/2020/p1team18/");
+            })
+        });
+        $(window).scroll(function () {
+            let scrollTop = $(window).scrollTop();
+            let height = $(window).height();
+            let x = scrollTop/ height;
+            let click = $("#clickToPlay");
+            if (scrollTop > 0) {
+                click.stop(true, true);
+                click.animate({
+                    'opacity': 0
+                })
+            }
+            if (scrollTop < 20) {
+                click.stop(true, true);
+                click.animate({
+                    'opacity': 100
+                })
+            }
+            $('.Page1_elements').css({
+                'opacity': 1-5*x*x,
+            });
+            $('.Page2_elements').css({
+                'opacity': -5*(x-0.7)*(x-1.7),
+            });
+            $('.Page3_elements').css({
+                'opacity': -5*(x-1.7)*(x-2.7),
+            });
+            $('.Page4_elements').css({
+                'opacity': -5*(x-2.7)*(x-3.7),
+            });
+            $('.Page5_elements').css({
+                'opacity': -5*(x-3.7)*(x-4.7),
+            });
+            $('.Page6_elements').css({
+                'opacity': -5*(x-4.7)*(x-5.7),
+            });
+            $('.Page7_elements').css({
+                'opacity': -5*(x-5.7)*(x-6.7),
+            });
+        });
+    </script>
+
 </head>
 <body>
 <div style="height: 700vh">
     <div class="Page Page1">
         <div class="description Page1_elements">
-            <h3 class="Page1_elements" id="clickToPlay">Click To Play</h3>
+            <h3 class="Page1_elements"">Duality</h3>
             <p class="Page1_elements">A pinball game that is more than a pinball game. <br>
                 Duality is a 2D game project and a trial for functional programming being used in game development. The game was developed with Elm. The minimal and classic mechanism of pinball is made a reflection to the commensurate pattern of life and love.</p>
         </div>
@@ -58,6 +106,7 @@
     </div>
     <h1>Duality</h1>
     <h2><span class="category">Game</span> > <span>2020</span></h2>
+    <h3 id="clickToPlay">Click To Play</h3>
     <svg>
         <line x1="2.97%" y1="0" x2="9.64%" y2="100%" style="stroke:#818181;stroke-width:2" />
         <line x1="43.44%" y1="0" x2="100%" y2="23.33%" style="stroke:#818181;stroke-width:1" />
@@ -66,46 +115,5 @@
 </div>
 </body>
 
-<script>
-    $("#icon").mousedown(function(){
-        window.location= "../../index.html";
-    });
-    $("#clickToPlay").mouseenter(function(){
-        $(this).css({
-            'color' : "#0089A6"
-        })
-    })    ;
-    $("#clickToPlay").mouseleave(function(){
-        $(this).css({
-            'color' : "white"
-        })
-    })
-    $(window).scroll(function () {
-        let scrollTop = $(window).scrollTop();
-        let height = $(window).height();
-        let x = scrollTop/ height;
-        $('.Page1_elements').css({
-            'opacity': 1-5*x*x,
-        });
-        $('.Page2_elements').css({
-            'opacity': -5*(x-0.7)*(x-1.7),
-        });
-        $('.Page3_elements').css({
-            'opacity': -5*(x-1.7)*(x-2.7),
-        });
-        $('.Page4_elements').css({
-            'opacity': -5*(x-2.7)*(x-3.7),
-        });
-        $('.Page5_elements').css({
-            'opacity': -5*(x-3.7)*(x-4.7),
-        });
-        $('.Page6_elements').css({
-            'opacity': -5*(x-4.7)*(x-5.7),
-        });
-        $('.Page7_elements').css({
-            'opacity': -5*(x-5.7)*(x-6.7),
-        });
-    });
-</script>
 
 </html>

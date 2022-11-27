@@ -21,6 +21,7 @@ $("#lenses").mousedown(function(){
 $("#whoIam").mousedown(function(){
     open("https://drive.google.com/file/d/1uunavh3XPXhGhCIxZoYglOMkDA1HhkE_/view?usp=sharing","blank");
 });
+let sectionActive = false;
 $(window).scroll(function () {
     let scrollTop = $(window).scrollTop();
     let height = $(window).height();
@@ -36,10 +37,18 @@ $(window).scroll(function () {
     $('.Page2_linein').css({
         'opacity': opacity3,
     });
-    if (scrollTop < 0.749*height) {
-        $("#darkBackground").css({
-            'opacity' : 0,
+    if (scrollTop < 0.7*height) {
+        sectionActive = false;
+        const dark = $("#darkBackground");
+        dark.stop(true, true);
+        dark.animate({
+            'opacity': 0,
         });
+        $('.SectionButton').each(function () {
+            this.style.color = "black";
+            this.style.fontSize = "2.2vmax";
+            this.style.fontWeight = "normal";
+        })
     }
 });
 $('.SectionButton').mouseenter(function(){
@@ -59,26 +68,34 @@ $('.SectionButton').mouseenter(function(){
     }
 })
 $('.SectionButton').mouseleave(function(){
-    const dark = $("#darkBackground");
-    dark.stop(true, true);
-    dark.animate({
-        'opacity' : 0,
-    });
-    $('.SectionButton').each(function() {
-        this.style.color = "black";
-    })
-    $(this).css({
-        'font-weight' : "normal",
-    }, 3000);
+    if (!sectionActive){
+        const dark = $("#darkBackground");
+        dark.stop(true, true);
+        dark.animate({
+            'opacity': 0,
+        });
+        $('.SectionButton').each(function () {
+            this.style.color = "black";
+        })
+        $(this).css({
+            'font-weight': "normal",
+        }, 3000);
+    }
 })
 $('.SectionButton').mousedown(function(){
     if ($(window).scrollTop() >= 0.749* $(window).height()) {
         const dark = $("#darkBackground");
         $('.SectionButton').each(function() {
             this.style.color = "gray";
+            this.style.fontSize = "2.2vmax";
+            this.style.fontWeight = "normal";
         })
         $(this).animate({
-            'font-size': "3vmax"
+            'font-size': "3.5vmax"
+        });
+        $(this).css({
+            'font-weight': "bold"
         });
     }
+    sectionActive = true;
 })
