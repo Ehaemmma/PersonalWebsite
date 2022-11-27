@@ -123,12 +123,12 @@ $('.SectionButton').mousedown(function(){
                 name = ".design";
                 break;
         }
-        for (let i=1; i<4; i++) {
+        for (let i=1; i<5; i++) {
             const column = "#column" + i.toString();
             $(column).empty();
         }
         $(name).each(function(i){
-            const column = "#column" + (i % 3 + 1).toString();
+            const column = "#column" + (i % 4 + 1).toString();
             $(column).append($(this));
         })
         $(name).css({'display': 'block'});
