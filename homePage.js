@@ -1,8 +1,8 @@
 function renderPage2() {
-    for (let i=1; i<7; i++) {
+    for (let i=1; i<9; i++) {
         const buttonName = '#SB' + i.toString();
         $(buttonName).css({
-            'left': (i*15-6).toString() + "%",
+            'left': (i*14-12).toString() + "%",
             'opacity': 0
         });
     }
@@ -85,6 +85,9 @@ $('.SectionButton').mouseleave(function(){
 $('.SectionButton').mousedown(function(){
     if ($(window).scrollTop() >= 0.749* $(window).height()) {
         const dark = $("#darkBackground");
+        dark.css({
+            'opacity': 0,
+        });
         $('.SectionButton').each(function() {
             this.style.color = "gray";
             this.style.fontSize = "2.2vmax";
@@ -96,6 +99,39 @@ $('.SectionButton').mousedown(function(){
         $(this).css({
             'font-weight': "bold"
         });
+        let name;
+        switch (this.id) {
+            case "SB1":
+                name = ".photography";
+                break;
+            case "SB2":
+                name = ".theater";
+                break;
+            case "SB3":
+                name = ".games";
+                break;
+            case "SB4":
+                name = ".lighting";
+                break;
+            case "SB5":
+                name = ".engineering";
+                break;
+            case "SB6":
+                name = ".exhibition";
+                break;
+            case "SB7":
+                name = ".design";
+                break;
+        }
+        for (let i=1; i<4; i++) {
+            const column = "#column" + i.toString();
+            $(column).empty();
+        }
+        $(name).each(function(i){
+            const column = "#column" + (i % 3 + 1).toString();
+            $(column).append($(this));
+        })
+        $(name).css({'display': 'block'});
     }
     sectionActive = true;
 })

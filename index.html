@@ -37,39 +37,66 @@
     </svg>
     <button class="SectionButton Page2_in" id="SB1"><span class="SectionButtonSpan"><span class="FirstLetterSectionButtonSpan">P</span>otography</span></button>
     <button class="SectionButton Page2_in" id="SB2"><span class="SectionButtonSpan"><span class="FirstLetterSectionButtonSpan">T</span>heater</span></button>
-    <button class="SectionButton Page2_in" id="SB3"><span class="SectionButtonSpan"><span class="FirstLetterSectionButtonSpan">E</span>ngineering</span></button>
+    <button class="SectionButton Page2_in" id="SB3"><span class="SectionButtonSpan"><span class="FirstLetterSectionButtonSpan">G</span>ames</span></button>
     <button class="SectionButton Page2_in" id="SB4"><span class="SectionButtonSpan"><span class="FirstLetterSectionButtonSpan">L</span>ighting</span></button>
-    <button class="SectionButton Page2_in" id="SB5"><span class="SectionButtonSpan"><span class="FirstLetterSectionButtonSpan">G</span>ames</span></button>
-    <button class="SectionButton Page2_in" id="SB6"><span class="SectionButtonSpan"><span class="FirstLetterSectionButtonSpan">D</span>esigns</span></button>
+    <button class="SectionButton Page2_in" id="SB5"><span class="SectionButtonSpan"><span class="FirstLetterSectionButtonSpan">E</span>ngineering</span></button>
+    <button class="SectionButton Page2_in" id="SB6"><span class="SectionButtonSpan"><span class="FirstLetterSectionButtonSpan">E</span>xhibitions</span></button>
+    <button class="SectionButton Page2_in" id="SB7"><span class="SectionButtonSpan"><span class="FirstLetterSectionButtonSpan">D</span>esigns</span></button>
     <svg id="Portfolio" class="Page2_linein sectionLines" style="opacity:0">
-        <line x1="12%" y1="0%" x2="62%" y2="100%" style="stroke:#A1A1A1;stroke-width:1" />
+        <line x1="5%" y1="0%" x2="62%" y2="100%" style="stroke:#A1A1A1;stroke-width:1" />
         <line x1="25%" y1="0%" x2="0%" y2="100%" style="stroke:#A1A1A1;stroke-width:1" />
         <line x1="23%" y1="0%" x2="28%" y2="100%" style="stroke:#A1A1A1;stroke-width:1" />
-        <line x1="50%" y1="0%" x2="28%" y2="100%" style="stroke:#A1A1A1;stroke-width:2" />
-        <line x1="58%" y1="0%" x2="90%" y2="100%" style="stroke:#A1A1A1;stroke-width:2" />
+        <line x1="58%" y1="0%" x2="28%" y2="100%" style="stroke:#A1A1A1;stroke-width:2" />
+        <line x1="63%" y1="0%" x2="90%" y2="100%" style="stroke:#A1A1A1;stroke-width:2" />
         <line x1="69%" y1="0%" x2="69%" y2="100%" style="stroke:#A1A1A1;stroke-width:1" />
         <line x1="85%" y1="0%" x2="76%" y2="100%" style="stroke:#A1A1A1;stroke-width:1" />
     </svg>
 </div>
 <div id="Page3">
-    <div id="theWasteland" class="card photography">
+    <div class="row">
+        <div class="column" id="column1">
+        </div>
+        <div class="column" id="column2">
+        </div>
+        <div class="column" id="column3">
+        </div>
+    </div>
+    <div class="card photography"  onmousedown="window.location.href = 'photography/theWasteland/index.html'">
         <img src="assets/thumbnails/dw.jpg" width="100%" alt="">
-        <div onmousedown="window.location.href = 'photography/theWasteland/index.html'">
+        <div>
             <h4>The Wasteland</h4>
             <h5>2019, Hangzhou</h5>
         </div>
     </div>
-    <div id="icarusWing" class="card photography">
-        <img src="assets/thumbnails/iw.jpg" width="100%" alt="">
+    <div class="card photography" onmousedown="window.location.href = 'photography/icarusWing/index.html'">
+        <img src="assets/thumbnails/iw.png" width="100%" alt="">
+        <div>
+            <h4>Icarus' Wing</h4>
+            <h5>2020, Hangzhou</h5>
+        </div>
+    </div>
+    <div class="card games">
+        <img src="assets/thumbnails/du.png" width="100%" alt="">
+        <div onmousedown="window.location.href = 'games/duality/index.html'">
+            <h4>Duality</h4>
+            <h5>2020, Elm</h5>
+        </div>
+    </div>
+    <div class="card photography">
+        <img src="assets/thumbnails/sa.jpg" width="100%" alt="">
         <div onmousedown="window.location.href = 'photography/theWasteland/index.html'">
             <h4>Icarus' Wing</h4>
             <h5>2020, Hangzhou</h5>
         </div>
     </div>
+    <div class="card games">
+        <img src="assets/thumbnails/pa.jpg" width="100%" alt="">
+        <div onmousedown="window.location.href = 'games/paradisa/index.html'">
+            <h4>Paradisa</h4>
+            <h5>2020, Elm</h5>
+        </div>
+    </div>
 </div>
-
-
-
 </body>
 
 <script src="https://d3js.org/d3.v7.min.js"></script>

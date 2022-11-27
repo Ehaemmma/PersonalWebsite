@@ -1,5 +1,6 @@
 * {
     font-family: Caviar, 宋体, sans-serif;
+    box-sizing: border-box;
 }
 @font-face {
     font-family: Caviar;
@@ -78,8 +79,9 @@ p {
 }
 #Page3{
     position: absolute;
-    top: 130vh;
+    top: 120vh;
     left:0;
+    width: 100%;
 }
 mark {
     background-color: #0089A6;
@@ -103,8 +105,21 @@ mark {
     font-weight : bold;
 }
 .card{
-    width: 15%;
+    margin: auto;
+    width: 50%;
     color: white;
     background-color: black;
     display: none;
+}
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
