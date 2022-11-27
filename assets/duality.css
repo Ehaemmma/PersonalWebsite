@@ -103,6 +103,15 @@ button {
     margin-left: 40%;
     z-index: -2;
 }
+nav{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    color: lightgray;
+}
+.nav:hover {
+    color: #0089A6;
+}
 .screen {
     position: fixed;
     top: 0;

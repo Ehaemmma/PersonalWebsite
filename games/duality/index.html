@@ -15,7 +15,26 @@
             $("#clickToPlay").mousedown(function () {
                 window.open("https://focs.ji.sjtu.edu.cn/silverfocs/demo/2020/p1team18/");
             })
+            $("#navOverview").mousedown(function(){
+                window.location = "#top";
+                $('.nav').css({
+                    'color' : 'lightgray'
+                })
+                $(this).css({
+                    'color' : '#0089A3'
+                })
+            })
+            $("#navLevels").mousedown(function(){
+                window.scrollTo(0, $(window).height());
+                $('.nav').css({
+                    'color' : 'lightgray'
+                })
+                $(this).css({
+                    'color' : '#0089A3'
+                })
+            })
         });
+
         $(window).scroll(function () {
             let scrollTop = $(window).scrollTop();
             let height = $(window).height();
@@ -60,9 +79,9 @@
 </head>
 <body>
 <div style="height: 700vh">
-    <div class="Page Page1">
+    <div id="Page1" class="Page Page1">
         <div class="description Page1_elements">
-            <h3 class="Page1_elements"">Duality</h3>
+            <h3 class="Page1_elements">Duality</h3>
             <p class="Page1_elements">A pinball game that is more than a pinball game. <br>
                 Duality is a 2D game project and a trial for functional programming being used in game development. The game was developed with Elm. The minimal and classic mechanism of pinball is made a reflection to the commensurate pattern of life and love.</p>
         </div>
@@ -74,27 +93,27 @@
             <p><b>Role:</b> Creative Coding<br>Mechanism Design<br>Graphic Design</p>
         </div>
     </div>
-    <div class="Page Page2 Page2_elements">
+    <div id="Page2" class="Page Page2 Page2_elements">
         <img class="c1 Page2_elements" id="1.1" src="assets/1.1.png" width="80%" alt="">
         <img class="c2 Page2_elements" id="1.2" src="assets/1.2.gif" width="25%" style="bottom: 5vh;right: 10vw;" alt="">
     </div>
-    <div class="Page Page3 Page3_elements">
+    <div id="Page3" class="Page Page3 Page3_elements">
         <img class="c1 Page3_elements" id="2.1" src="assets/2.1.png" width="80%" alt="">
         <img class="c2 Page3_elements" id="2.2" src="assets/2.2.gif" width="40%" style="bottom: 15vh;right: 5vw;" alt="">
     </div>
-    <div class="Page Page4 Page4_elements">
+    <div id="Page4" class="Page Page4 Page4_elements">
         <img class="c1 Page4_elements" id="3.1" src="assets/3.1.png" width="80%" alt="">
         <img class="c2 Page4_elements" id="3.2" src="assets/3.2.gif" width="40%" style="bottom: 15vh;right: 5vw;" alt="">
     </div>
-    <div class="Page Page5 Page5_elements">
+    <div id="Page5" class="Page Page5 Page5_elements">
         <img class="c1 Page5_elements" id="4.1" src="assets/4.1.png" width="80%" alt="">
         <img class="c2 Page5_elements" id="4.2" src="assets/4.2.gif" width="40%" style="bottom: 15vh;right: 5vw;" alt="">
     </div>
-    <div class="Page Page6 Page6_elements">
+    <div id="Page6" class="Page Page6 Page6_elements">
         <img class="c1 Page6_elements" id="5.1" src="assets/5.1.png" width="80%" alt="">
         <img class="c2 Page6_elements" id="5.2" src="assets/5.2.gif" width="40%" style="bottom: 15vh;right: 5vw;" alt="">
     </div>
-    <div class="Page Page7 Page7_elements">
+    <div id="Page7" class="Page Page7 Page7_elements">
         <img class="c1 Page7_elements" id="6.1" src="assets/6.1.png" width="80%" alt="">
         <img class="c2 Page7_elements" id="6.2" src="assets/6.2.gif" width="40%" style="bottom: 15vh;right: 5vw;" alt="">
     </div>
@@ -112,6 +131,10 @@
         <line x1="43.44%" y1="0" x2="100%" y2="23.33%" style="stroke:#818181;stroke-width:1" />
         <line x1="0%" y1="40%" x2="68.8%" y2="0%" style="stroke:#0089A6;stroke-width:3" />
     </svg>
+    <nav>
+        <h3 class= "nav" id="navOverview">Overview</h3>
+        <h3 class= "nav" id="navLevels">Levels</h3>
+    </nav>
 </div>
 </body>
 

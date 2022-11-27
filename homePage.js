@@ -79,7 +79,7 @@ $('.SectionButton').mouseleave(function(){
         })
         $(this).css({
             'font-weight': "normal",
-        }, 3000);
+        });
     }
 })
 $('.SectionButton').mousedown(function(){
