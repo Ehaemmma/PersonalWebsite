@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Duality</title>
-    <link rel="stylesheet" href="assets/duality.css">
+    <title>Paradisa</title>
+    <link rel="stylesheet" href="assets/paradisa.css">
     <link rel="icon" href="../../assets/Logo.svg">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script>
@@ -13,7 +13,7 @@
                 window.location = "../../index.html";
             });
             $("#clickToPlay").mousedown(function () {
-                window.open("https://focs.ji.sjtu.edu.cn/silverfocs/demo/2020/p1team18/");
+                window.open("https://lighghteeloo.github.io/ParadisaRelease/");
             })
             $("#navOverview").mousedown(function(){
                 window.location = "#top";
@@ -24,8 +24,8 @@
                     'color' : '#0089A3'
                 })
             })
-            $("#navLevels").mousedown(function(){
-                window.scrollTo(0, $(window).height());
+            $("#navGameplay").mousedown(function(){
+                window.scrollTo(0, $(window).height() * 1.3);
                 $('.nav').css({
                     'color' : 'lightgray'
                 })
@@ -59,58 +59,56 @@
                 $('#navOverview').css({
                     'color' : 'lightgray'
                 })
-                $('#navLevels').css({
+                $('#navGameplay').css({
                     'color' : '#0089A6'
                 })
             }
             if (scrollTop < height) {
-                $('#navLevels').css({
+                $('#navGameplay').css({
                     'color' : 'lightgray'
                 })
             }
+            const offset = 1;
             $('.Page1_elements').css({
                 'opacity': 1-5*x*x,
             });
-            $('.Page2_elements').css({
-                'opacity': -5*(x-0.7)*(x-1.7),
-            });
-            $('.Page3_elements').css({
-                'opacity': -5*(x-1.7)*(x-2.7),
-            });
-            $('.Page4_elements').css({
-                'opacity': -5*(x-2.7)*(x-3.7),
-            });
-            $('.Page5_elements').css({
-                'opacity': -5*(x-3.7)*(x-4.7),
-            });
-            $('.Page6_elements').css({
-                'opacity': -5*(x-4.7)*(x-5.7),
-            });
-            $('.Page7_elements').css({
-                'opacity': -5*(x-5.7)*(x-6.7),
-            });
+            for (let i=2; i<8; i++) {
+                const name = '.Page'+i.toString()+'_elements';
+                $(name).css({
+                'opacity': -5*(x-(i-2+offset))*(x-(i-1+offset)),
+                });
+            }
         });
     </script>
-
 </head>
+
 <body>
 <div style="height: 700vh">
     <div id="Page1" class="Page Page1">
         <div class="description Page1_elements">
-            <h3 class="Page1_elements">Duality</h3>
-            <p class="Page1_elements">A pinball game that is more than a pinball game. <br>
-                Duality is a 2D game project and a trial for functional programming being used in game development. The game was developed with Elm. The minimal and classic mechanism of pinball is made a reflection to the commensurate pattern of life and love.</p>
+            <h3 class="Page1_elements">Paradisa</h3>
+            <p class="Page1_elements">
+                The extraordinary name Paradisa (Nissa for short), belongs
+                to a violin prodigy in an ordinary family. Though her talent brings her family honor and fame, seldom the care and praise from strangers and
+                friends will make it through the glaring light of golden trophies,
+                and shines right on Paradisa herself. She has become extra lonely since her mother passed away.
+                <br> <br>
+                Therefore, in this ordinary morning in spring, she begins an
+                expedition in her own house. She applies her extraordinary
+                imagination on all these common scenes, with her little
+                companion - a cat. No one knows that everything expected to run on routine is not
+                the same again.</p>
         </div>
-        <img class="Page1_elements" id="cover" src="assets/cover.png" width="30%" alt="">
+        <img class="Page1_elements" id="cover" src="assets/cover.jpg" width="30%" alt="">
         <div class="tag at_right">
             <h3>Project Info</h3>
-            <p><b>Duration:</b> 2020.5 - 2020.6</p>
+            <p><b>Duration:</b> 2020.6 - 2020.8</p>
             <p><b>Team Member:</b> Anna Zhou<br>Yuchen Jiang<br>Rundong Tang<br>Zhimin Sun</p>
-            <p><b>Role:</b> Creative Coding<br>Mechanism Design<br>Graphic Design</p>
+            <p><b>Role:</b> Creative Coding<br>Mechanism Design<br>Graphic Design<br>Game Narrative</p>
         </div>
     </div>
     <div id="Page2" class="Page Page2 Page2_elements">
-        <img class="c1 Page2_elements" id="1.1" src="assets/1.1.png" width="80%" alt="">
+        <img class="c1 Page2_elements" id="1.1" src="assets/1.png" width="80%" alt="">
         <img class="c2 Page2_elements" id="1.2" src="assets/1.2.gif" width="25%" style="bottom: 5vh;right: 10vw;" alt="">
     </div>
     <div id="Page3" class="Page Page3 Page3_elements">
@@ -139,7 +137,7 @@
         <img src="../../assets/Logo.svg" width="60px" alt="HOME">
         <p id="backHome">HOME</p>
     </div>
-    <h1>Duality</h1>
+    <h1>Paradisa</h1>
     <h2><span class="category">Game</span> > <span>2020</span></h2>
     <h3 id="clickToPlay">Click To Play</h3>
     <svg>
@@ -149,7 +147,7 @@
     </svg>
     <nav>
         <h3 class= "nav" id="navOverview">Overview</h3>
-        <h3 class= "nav" id="navLevels">Levels</h3>
+        <h3 class= "nav" id="navGameplay">Gameplay</h3>
     </nav>
 </div>
 </body>
