@@ -60,7 +60,7 @@ $('.SectionButton').mouseenter(function(){
             'opacity' : 100,
         }, 3000);
         $('.SectionButton').each(function() {
-            this.style.color = "lightgray";
+            this.style.color = "gray";
         })
         $(this).css({
             'color' : "#0089A6",
@@ -81,6 +81,11 @@ $('.SectionButton').mouseleave(function(){
         $(this).css({
             'font-weight': "normal",
         });
+    }
+    if (sectionActive){
+        $('.SectionButton').each(function () {
+            this.style.color = "gray";
+        })
     }
 })
 $('.SectionButton').mousedown(function(){
