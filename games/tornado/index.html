@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tornado</title>
+    <link rel="stylesheet" href="assets/tornado.css">
+    <link rel="icon" href="../../assets/Logo.svg">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#icon").mousedown(function () {
+                window.location = "../../index.html";
+            });
+            $("#clickToPlay").mousedown(function () {
+                window.open("https://lighghteeloo.netlify.app/post/tornado/");
+            })
+            $("#navOverview").mousedown(function(){
+                window.location = "#top";
+                $('.nav').css({
+                    'color' : 'lightgray'
+                })
+                $(this).css({
+                    'color' : '#0089A3'
+                })
+            })
+        });
+
+        $(window).scroll(function () {
+            let scrollTop = $(window).scrollTop();
+            let height = $(window).height();
+            let x = scrollTop/ height;
+            let click = $("#clickToPlay");
+            if (scrollTop > 0) {
+                click.stop(true, true);
+                click.animate({
+                    'opacity': 0
+                })
+            }
+            if (scrollTop < 20) {
+                click.stop(true, true);
+                click.animate({
+                    'opacity': 100
+                })
+            }
+            const offset = 1;
+            $('.Page1_elements').css({
+                'opacity': 1-5*x*x,
+            });
+        });
+    </script>
+</head>
+
+<body>
+<div style="height: 100vh">
+    <div id="Page1" class="Page Page1">
+        <div class="description Page1_elements">
+            <h3 class="Page1_elements">Tornado</h3>
+            <p class="Page1_elements">
+                A game that explore the property of interaction with massive objects.
+                <i>Tornado</i> is a tribute to campaigns happened in mainland China in the third year of pandemic.</p>
+        </div>
+        <img class="Page1_elements" id="cover" src="assets/cover.jpg" width="30%" alt="">
+        <div class="tag at_right">
+            <h3>Project Info</h3>
+            <p><b>Duration:</b> 2022.10 - 2022.11</p>
+            <p><b>Team Member:</b> Anna Zhou<br>Yuchen Jiang</p>
+            <p><b>Role:</b>Mechanism Design<br>Game Narrative<br>Visual Design</p>
+        </div>
+    </div>
+</div>
+<div class="screen">
+    <div id="icon">
+        <img src="../../assets/Logo.svg" width="60px" alt="HOME">
+        <p id="backHome">HOME</p>
+    </div>
+    <h1>Tornado</h1>
+    <h2><span class="category">Game</span> > <span>2022</span></h2>
+    <h3 id="clickToPlay">Click To Play</h3>
+    <svg>
+        <line x1="2.97%" y1="0" x2="9.64%" y2="100%" style="stroke:#818181;stroke-width:2" />
+        <line x1="43.44%" y1="0" x2="100%" y2="23.33%" style="stroke:#818181;stroke-width:1" />
+        <line x1="0%" y1="40%" x2="68.8%" y2="0%" style="stroke:#0089A6;stroke-width:3" />
+    </svg>
+    <nav>
+        <h3 class= "nav" id="navOverview">Overview</h3>
+    </nav>
+</div>
+</body>
+
+
+</html>

@@ -39,6 +39,7 @@ $(window).scroll(function () {
     });
     if (scrollTop < 0.7*height) {
         sectionActive = false;
+        $('.row').css({'display': 'none'});
         const dark = $("#darkBackground");
         dark.stop(true, true);
         dark.animate({
@@ -123,15 +124,17 @@ $('.SectionButton').mousedown(function(){
                 name = ".design";
                 break;
         }
-        for (let i=1; i<5; i++) {
-            const column = "#column" + i.toString();
-            $(column).empty();
-        }
-        $(name).each(function(i){
-            const column = "#column" + (i % 4 + 1).toString();
-            $(column).append($(this));
-        })
+        $('.row').css({'display': 'none'});
         $(name).css({'display': 'block'});
+        // for (let i=1; i<5; i++) {
+        //     const column = "#column" + i.toString();
+        //     $(column).empty();
+        // }
+        // $(name).each(function(i){
+        //     const column = "#column" + (i % 4 + 1).toString();
+        //     $(column).append($(this));
+        // })
+        // $(name).css({'display': 'block'});
     }
     sectionActive = true;
 })

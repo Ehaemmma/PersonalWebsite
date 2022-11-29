@@ -109,7 +109,6 @@ mark {
     width: 70%;
     color: white;
     background-color: black;
-    display: none;
 }
 .column {
   float: left;
@@ -118,6 +117,9 @@ mark {
 }
 
 /* Clear floats after the columns */
+.row{
+    display: none;
+}
 
 .row:after {
   content: "";
