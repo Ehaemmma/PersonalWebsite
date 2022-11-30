@@ -9,6 +9,25 @@ function renderPage2() {
 }
 $(document).ready(function(){
     renderPage2();
+    let scrollTop = $(window).scrollTop();
+    let height = $(window).height();
+    if (scrollTop > 0.7 * height) {
+        $('.Page2_in').css({
+            'opacity': '100',
+        });
+        $('.Page2_linein').css({
+            'opacity': '100',
+        });
+        $('.Page1_out').css({
+            'opacity': '0',
+        });
+        $('.SectionButton').each(function () {
+            this.style.color = "black";
+            this.style.fontSize = "2.2vmax";
+            this.style.fontWeight = "normal";
+        })
+        sectionActive = false;
+    }
 });
 $("#lenses").mousedown(function(){
     let intro = $("#intro");
