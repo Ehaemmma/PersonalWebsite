@@ -119,6 +119,7 @@ mark {
 /* Clear floats after the columns */
 .row{
     display: none;
+    opacity: 0;
 }
 
 .row:after {

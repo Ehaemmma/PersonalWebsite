@@ -86,6 +86,35 @@ $('.SectionButton').mouseenter(function(){
             'font-weight' : "bold",
         });
     }
+    let name;
+    switch (this.id) {
+        case "SB1":
+            name = ".photography";
+            break;
+        case "SB2":
+            name = ".theater";
+            break;
+        case "SB3":
+            name = ".games";
+            break;
+        case "SB4":
+            name = ".lighting";
+            break;
+        case "SB5":
+            name = ".engineering";
+            break;
+        case "SB6":
+            name = ".exhibition";
+            break;
+        case "SB7":
+            name = ".design";
+            break;
+    }
+    $('.row').css({'display': 'none'});
+    $(name).css({'display': 'block'});
+    $(name).animate({
+        'opacity' : 100,
+    }, 3000);
 })
 $('.SectionButton').mouseleave(function(){
     if (!sectionActive){
@@ -100,6 +129,7 @@ $('.SectionButton').mouseleave(function(){
         $(this).css({
             'font-weight': "normal",
         });
+        $('.row').css({'display': 'none'});
     }
     if (sectionActive){
         $('.SectionButton').each(function () {
@@ -124,41 +154,6 @@ $('.SectionButton').mousedown(function(){
         $(this).css({
             'font-weight': "bold"
         });
-        let name;
-        switch (this.id) {
-            case "SB1":
-                name = ".photography";
-                break;
-            case "SB2":
-                name = ".theater";
-                break;
-            case "SB3":
-                name = ".games";
-                break;
-            case "SB4":
-                name = ".lighting";
-                break;
-            case "SB5":
-                name = ".engineering";
-                break;
-            case "SB6":
-                name = ".exhibition";
-                break;
-            case "SB7":
-                name = ".design";
-                break;
-        }
-        $('.row').css({'display': 'none'});
-        $(name).css({'display': 'block'});
-        // for (let i=1; i<5; i++) {
-        //     const column = "#column" + i.toString();
-        //     $(column).empty();
-        // }
-        // $(name).each(function(i){
-        //     const column = "#column" + (i % 4 + 1).toString();
-        //     $(column).append($(this));
-        // })
-        // $(name).css({'display': 'block'});
     }
     sectionActive = true;
 })
