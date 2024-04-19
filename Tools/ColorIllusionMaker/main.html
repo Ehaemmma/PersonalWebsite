@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Color Illusion Maker</title>
+<style>
+    .boddy {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      text-align: left;
+    }
+    .color-display {
+      width: 250px;
+      height: 250px;
+      border: none;
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .center-square {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: none;
+    }
+</style>
+</head>
+<h2> Color Illusion Maker</h2>
+<h4> Ehaema 2024.4.19</h4>
+<body>
+    <button onclick="toggleSync(3)" type="button">Keep Brightness</button>
+    <button onclick="toggleSync(1)" type="button">Keep Hue</button>
+    <button onclick="toggleSync(2)" type="button">Keep Saturation</button>  
+    <button onclick="toggleSync(0)" type="button">Free</button>
+<div class="boddy">
+    <div class="container">
+        <div class="color-display" id="colorDisplay1" style="background-color: hsl(0, 50%, 50%)">
+          <div class="center-square" id="centerSquare" style="background-color: hsl(0, 80%, 50%)"></div>
+        </div>
+        <div>
+          <label for="hue">Outer Hue:</label>
+          <input type="range" id="hue1" name="hue" min="0" max="360" value="0">
+        </div>
+        <div>
+          <label for="saturation">Outer Saturation:</label>
+          <input type="range" id="saturation1" name="saturation" min="0" max="100" value="50">
+        </div>
+        <div>
+          <label for="brightness">Outer Brightness:</label>
+          <input type="range" id="brightness1" name="brightness" min="0" max="100" value="50">
+        </div> 
+      </div>
+      <div class="container">
+          <div class="color-display" id="colorDisplay2" style="background-color: hsl(0, 50%, 50%)">
+            <div class="center-square" id="centerSquare" style="background-color: hsl(0, 80%, 50%)"></div>
+          </div>
+          <div>
+            <label for="hue">Outer Hue:</label>
+            <input type="range" id="hue2" name="hue" min="0" max="360" value="0">
+          </div>
+          <div>
+            <label for="saturation">Outer Saturation:</label>
+            <input type="range" id="saturation2" name="saturation" min="0" max="100" value="50">
+          </div>
+          <div>
+            <label for="brightness">Outer Brightness:</label>
+            <input type="range" id="brightness2" name="brightness" min="0" max="100" value="50">
+          </div>
+        </div>
+        <div>
+          <div>
+              <label for="hueCenter">Inner Hue:</label>
+              <input type="range" id="hueCenter" name="hueCenter" min="0" max="360" value="0">
+            </div>
+            <div>
+              <label for="saturationCenter">Inner Saturation:</label>
+              <input type="range" id="saturationCenter" name="saturationCenter" min="0" max="100" value="80">
+            </div>
+            <div>
+              <label for="brightnessCenter">Inner Brightness:</label>
+              <input type="range" id="brightnessCenter" name="brightnessCenter" min="0" max="100" value="50">
+            </div>
+        </div>
+</div>
+
+
+<script>
+  let hueSync = 0; 
+  let saturationSync = 0;
+  let brightnessSync = 0;
+  function updateColor() {
+    const hue1 = document.getElementById('hue1').value;
+    const saturation1 = document.getElementById('saturation1').value;
+    const brightness1 = document.getElementById('brightness1').value;
+    let hue2 = document.getElementById('hue2').value;
+    let saturation2 = document.getElementById('saturation2').value;
+    let brightness2 = document.getElementById('brightness2').value;
+    const hueCenter = document.getElementById('hueCenter').value;
+    const saturationCenter = document.getElementById('saturationCenter').value;
+    const brightnessCenter = document.getElementById('brightnessCenter').value;
+    const colorDisplay1 = document.getElementById('colorDisplay1');
+    const colorDisplay2 = document.getElementById('colorDisplay2');
+    const centerSquare = document.getElementsByClassName('center-square');
+    colorDisplay1.style.backgroundColor = `hsl(${hue1}, ${saturation1}%, ${brightness1}%)`;
+    centerSquare[0].style.backgroundColor = `hsl(${hueCenter}, ${saturationCenter}%, ${brightnessCenter}%)`;
+    centerSquare[1].style.backgroundColor = `hsl(${hueCenter}, ${saturationCenter}%, ${brightnessCenter}%)`;
+    if (hueSync == 1){
+        hue2 = hue1;
+        document.getElementById('hue2').value = hue2;
+    }
+    if (saturationSync == 1){
+        saturation2 = saturation1;
+        document.getElementById('saturation2').value = saturation2;
+    }
+    if (brightnessSync == 1){
+        brightness2 = brightness1;
+        document.getElementById('brightness2').value = brightness2;
+    }
+    colorDisplay2.style.backgroundColor = `hsl(${hue2}, ${saturation2}%, ${brightness2}%)`;
+  }
+    function toggleSync(index) {
+        if (index==0){
+            hueSync = 0; 
+            saturationSync = 0;
+            brightnessSync = 0;
+        }
+        else if (index==1){
+            hueSync = 1; 
+        }
+        else if (index==2){
+            saturationSync = 1; 
+        }
+        else if (index==3){
+            brightnessSync = 1; 
+        }
+        updateColor(); 
+    }
+  document.getElementById('hue1').addEventListener('input', updateColor);
+  document.getElementById('saturation1').addEventListener('input', updateColor);
+  document.getElementById('brightness1').addEventListener('input', updateColor);
+  document.getElementById('hue2').addEventListener('input', updateColor);
+  document.getElementById('saturation2').addEventListener('input', updateColor);
+  document.getElementById('brightness2').addEventListener('input', updateColor);
+  document.getElementById('hueCenter').addEventListener('input', updateColor);
+  document.getElementById('saturationCenter').addEventListener('input', updateColor);
+  document.getElementById('brightnessCenter').addEventListener('input', updateColor);
+</script>
+</body>
+</html>
